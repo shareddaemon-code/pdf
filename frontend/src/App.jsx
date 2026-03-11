@@ -9,12 +9,7 @@ function AuthScreen({ onAuth }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-<<<<<<< HEAD
-
-  const API_URL = "https://pdf-ga55.onrender.com/ask-pdf";
-=======
   const [loading, setLoading] = useState(false);
->>>>>>> 63214d2 (Add chat continuation and UI updates)
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -244,21 +239,11 @@ function ChatApp({ token, onLogout }) {
     : activeChat?.pdf_filename || "No file chosen";
 
   return (
-<<<<<<< HEAD
-    <div className="app">
-      <div className="container">
-        <div className="hero">
-          <h1>PDF Q&A</h1>
-          <p className="subtitle">
-            Your documents, explained in seconds.
-          </p>
-=======
     <div className="app-layout">
       <aside className="sidebar">
         <div className="sidebar-brand">
           <h2>PDF Q&amp;A</h2>
           <p>Your chats</p>
->>>>>>> 63214d2 (Add chat continuation and UI updates)
         </div>
 
         <button className="primary-btn sidebar-btn" onClick={createChat}>
@@ -373,8 +358,6 @@ function ChatApp({ token, onLogout }) {
     </div>
   );
 }
-<<<<<<< HEAD
-=======
 
 export default function App() {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
@@ -390,4 +373,3 @@ export default function App() {
 
   return <ChatApp token={token} onLogout={handleLogout} />;
 }
->>>>>>> 63214d2 (Add chat continuation and UI updates)
