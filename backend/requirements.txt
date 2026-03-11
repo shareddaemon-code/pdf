@@ -2,10 +2,6 @@ fastapi
 uvicorn[standard]
 python-multipart
 python-dotenv
-<<<<<<< HEAD
-requests
-httpx
-=======
 httpx
 sqlalchemy
 psycopg2-binary
@@ -13,4 +9,3 @@ passlib[bcrypt]==1.7.4
 bcrypt==4.0.1
 python-jose[cryptography]
 email-validator
->>>>>>> 63214d2 (Add chat continuation and UI updates)
