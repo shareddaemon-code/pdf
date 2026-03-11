@@ -233,6 +233,7 @@ function ChatApp({ token, onLogout }) {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [activeChat?.messages, loading]);
 
+  const hasAttachedPdf = Boolean(activeChat?.pdf_filename);
   const displayedFileName = file
     ? file.name
     : activeChat?.pdf_filename || "No file chosen";
@@ -338,21 +339,25 @@ function ChatApp({ token, onLogout }) {
         </section>
 
         <form className="composer-card" onSubmit={handleAsk}>
-          <label className="field-label">PDF file</label>
 
-          <div className="file-box">
-            <input
-              id="pdf-upload"
-              type="file"
-              accept=".pdf"
-              onChange={(e) => setFile(e.target.files?.[0] || null)}
-              className="hidden-file-input"
-            />
-            <label htmlFor="pdf-upload" className="file-button">
-              Choose File
-            </label>
-            <span className="file-name">{displayedFileName}</span>
-          </div>
+          {!hasAttachedPdf && (
+            <div>
+              <label className="field-label">PDF file</label>
+              <div className="file-box">
+                <input
+                  id="pdf-upload"
+                  type="file"
+                  accept=".pdf"
+                  onChange={(e) => setFile(e.target.files?.[0] || null)}
+                  className="hidden-file-input"
+                />
+                <label htmlFor="pdf-upload" className="file-button">
+                  Choose File
+                </label>
+                <span className="file-name">{displayedFileName}</span>
+              </div>
+            </div>
+          )}
 
           <label className="field-label">Question</label>
           <textarea
