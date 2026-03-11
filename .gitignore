@@ -1,0 +1,15 @@
+# env files
+.env
+frontend/.env
+backend/.env
+
+# python cache
+__pycache__/
+*.pyc
+
+# uploads
+backend/uploads/
+
+# node
+node_modules/
+dist/
