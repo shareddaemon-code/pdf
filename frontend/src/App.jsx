@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
 
-const API_BASE = "https://pdf-ga55.onrender.com";
+const API_BASE = "https://pdf-qa21.onrender.com";
 
 function AuthScreen({ onAuth }) {
   const [mode, setMode] = useState("login");
